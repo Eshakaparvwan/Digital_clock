@@ -1,0 +1,85 @@
+<html>
+<head>
+	<style>
+		body
+		{
+			background: url("adversting-architecture-buildings-1862000.jpg");
+			background-position: center;
+			background-size: 1350px 650px;
+			background-repeat: no-repeat;
+		}
+			#clock
+			{
+				height:120px;
+				width:350px;
+				/*background: linear-gradient(to left, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				background:black;
+				opacity:0.7;
+			margin-left:477px;
+				margin-top:255px;
+				border-radius:90px;
+				border-color:white;
+				
+				/*box-shadow: .2em.2em 0.2em grey; right bottom top left*/
+				text-align:center;
+				color:white;
+				font-family: arial;
+				line-height:130px; 
+				font-size: 50px;
+							}
+	/*#clock
+	{
+		width: 900px;
+		margin:160px;
+		text-align: center;
+		font-size: 150px;
+	}	
+*/
+	</style>
+		
+</head>
+<title>DIGITAL CLOCK</title>
+<body>
+
+	<div id ="clock"></div>
+	<script>
+		setInterval(displayclock,500);
+		function displayclock()
+		{
+			var time= new Date();
+			var hrs= time.getHours();
+			var min=time.getMinutes();
+			var sec=time.getSeconds();
+			// var en='AM'
+			// if(hrs>12)
+			// {
+			// 	en='PM';
+			// }	
+			if(hrs>12)
+			{
+				hrs=hrs-12;
+			}
+			if(hrs==0)
+			{
+				hrs=12;
+			}
+			if(hrs<10)
+			{
+				hrs='0'+hrs;
+			}
+			if(min<10)
+			{
+				min='0'+min;
+			}
+			if(sec<10)
+			{
+				sec='0'+sec;
+			}
+			
+			
+			document.getElementById("clock").innerHTML=hrs  +':'+  min  +':'+  sec  ; // +    en;
+
+		}
+	</script>
+</body>
+</html>
